@@ -35,6 +35,6 @@ public class GameState : MonoBehaviour {
         playerControllers[turn].CalculateMoves();
         turn++;
         turn = turn % numPlayers;
-        Debug.Log("turn:" + turn);
+        // Debug.Log("turn:" + turn);
     }
 }
