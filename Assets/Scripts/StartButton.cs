@@ -7,5 +7,8 @@ public class StartButton : MonoBehaviour
     public void Hello()
     {
         Debug.Log("hello world");
+        Debug.Log("increase hp");
+
+        HealthDisplay.instance.health++;
     }
 }

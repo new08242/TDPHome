@@ -5,13 +5,14 @@ using UnityEngine.UI;
 
 public class HealthDisplay : MonoBehaviour
 {
-    private int health = 5;
+    public static HealthDisplay instance;
+    public int health = 5;
     public Text healthText;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        instance = this;
     }
 
     // Update is called once per frame
