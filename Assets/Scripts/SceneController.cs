@@ -9,7 +9,7 @@ public class SceneController : MonoBehaviour
     public GameObject PlayerSprite;
 
     // Start is called before the first frame update    // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         playerControllers = new List<PlayerController>();
 
@@ -20,11 +20,18 @@ public class SceneController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
-        playerControllers[turn].CalculateMoves();
+        playerControllers[turn % GameState.NumPlayers].CalculateMoves();
         turn++;
-        turn = turn % GameState.NumPlayers;
         Debug.Log("turn:" + turn);
+    }
+
+    public void GameOver() {
+
+    }
+
+    public void SceneComplete() {
+
     }
 }
