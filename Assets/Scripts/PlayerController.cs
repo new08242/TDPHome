@@ -26,6 +26,6 @@ public class PlayerController : MonoBehaviour {
 
     private void calculateMove(string move)
     {
-
+        Debug.Log("Inside calculate move");
     }
 }
