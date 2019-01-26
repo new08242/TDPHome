@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameState : MonoBehaviour {
+public class GameState : ScriptableObject {
 
     public static int NumPlayers;
     public static int Turn;
