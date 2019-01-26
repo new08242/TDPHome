@@ -11,7 +11,7 @@ public class GameState : MonoBehaviour {
     public GameObject PlayerSprite;
 
     public GameState() {
-        numPlayers = 1;
+        numPlayers = 3;
         playerControllers = new List<PlayerController>();
     }
 
@@ -23,7 +23,6 @@ public class GameState : MonoBehaviour {
     // Start is called before the first frame update
     void Start()
     {
-
         for (int i = 0; i < numPlayers; i++) {
             GameObject spriteObject = Instantiate(PlayerSprite, new Vector3(0, 0, 0), Quaternion.identity);
             playerControllers.Add(spriteObject.GetComponent<PlayerController>());
@@ -34,7 +33,8 @@ public class GameState : MonoBehaviour {
     void Update()
     {
         playerControllers[turn].CalculateMoves();
-        turn = turn++ % playerControllers.Count;
+        turn++;
+        turn = turn % numPlayers;
         Debug.Log("turn:" + turn);
     }
 }
