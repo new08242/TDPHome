@@ -11,7 +11,7 @@ public class GameState : MonoBehaviour {
     public GameObject PlayerSprite;
 
     public GameState() {
-        numPlayers = 3;
+        numPlayers = 1;
         playerControllers = new List<PlayerController>();
     }
 
