@@ -5,12 +5,12 @@ using UnityEngine;
 public class SceneController : MonoBehaviour
 {
     private List<PlayerController> playerControllers;
+    private int turn;
     public GameObject PlayerSprite;
 
     // Start is called before the first frame update    // Start is called before the first frame update
     void Start()
     {
-
         playerControllers = new List<PlayerController>();
 
         for (int i = 0; i < GameState.NumPlayers; i++) {
@@ -22,9 +22,9 @@ public class SceneController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerControllers[GameState.Turn].CalculateMoves();
-        GameState.Turn++;
-        GameState.Turn = GameState.Turn % GameState.NumPlayers;
-        Debug.Log("turn:" + GameState.Turn);
+        playerControllers[turn].CalculateMoves();
+        turn++;
+        turn = turn % GameState.NumPlayers;
+        Debug.Log("turn:" + turn);
     }
 }

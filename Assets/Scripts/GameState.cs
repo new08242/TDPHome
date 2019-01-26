@@ -5,5 +5,4 @@ using UnityEngine;
 public class GameState : ScriptableObject {
 
     public static int NumPlayers;
-    public static int Turn;
 }
