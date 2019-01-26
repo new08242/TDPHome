@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
-    private static int noOfPlayers;
+
+    private static int playersInstantiated;
     private int healthPoint;
     private int playerNumber;
+
     private List<string> moves;
 
     // Start is called before the first frame update
-    public PlayerController() {
+    public void Start () {
         healthPoint = 100;
         moves = new List<string>();
-        playerNumber = noOfPlayers++;
+        playerNumber = playersInstantiated++;
     }
 
     public void CalculateMoves()
