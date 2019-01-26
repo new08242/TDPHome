@@ -1,0 +1,37 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class SceneController : MonoBehaviour
+{
+    private List<PlayerController> playerControllers;
+    private int turn;
+    public GameObject PlayerSprite;
+
+    // Start is called before the first frame update    // Start is called before the first frame update
+    public void Start()
+    {
+        playerControllers = new List<PlayerController>();
+
+        for (int i = 0; i < GameState.NumPlayers; i++) {
+            GameObject spriteObject = Instantiate(PlayerSprite, new Vector3(0, 0, 0), Quaternion.identity);
+            playerControllers.Add(spriteObject.GetComponent<PlayerController>());
+        }
+    }
+
+    // Update is called once per frame
+    public void Update()
+    {
+        playerControllers[turn % GameState.NumPlayers].CalculateMoves();
+        turn++;
+        Debug.Log("turn:" + turn);
+    }
+
+    public void GameOver() {
+
+    }
+
+    public void SceneComplete() {
+
+    }
+}
