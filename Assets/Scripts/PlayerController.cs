@@ -17,15 +17,14 @@ public class PlayerController : MonoBehaviour {
         this.moves = new string[5];
     }
 
-    // Update is called once per frame
-    void Update()
+    public void CalculateMoves()
     {
-        for (i = 0; i < moves.Length; i++) {
+        for (int i = 0; i < moves.Length; i++) {
             calculateMove(moves[i]);
         }
     }
 
-    void calculateMove(string move)
+    private void calculateMove(string move)
     {
 
     }
